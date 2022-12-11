@@ -5,13 +5,13 @@ import entities.*;
 class Game extends Screen {
 
     var dragon: Dragon;
-    var obstacle: Obstacle;
+    var obstacles: Obstacles;
 
-    var gameSpeed: Float = 150;
+    var gameSpeed: Float = 100;
 
     override public function new(app: Main) {
         super(app);
-        obstacle = new Obstacle(this);
+        obstacles = new Obstacles(this);
         dragon = new Dragon(this);
     }
 
@@ -19,7 +19,7 @@ class Game extends Screen {
         if (hxd.Key.isPressed(hxd.Key.SPACE)) {
             dragon.flap();
         }
-        obstacle.update(dt, gameSpeed);
+        obstacles.update(dt, gameSpeed);
         dragon.update(dt);
     }
 }

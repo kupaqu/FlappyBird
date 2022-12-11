@@ -4,8 +4,8 @@ import screens.*;
 
 class Obstacle {
     var gap: Float;
-    var upperPipe: h2d.Bitmap;
-    var bottomPipe: h2d.Bitmap;
+    public var upperPipe: h2d.Bitmap;
+    public var bottomPipe: h2d.Bitmap;
 
     public function new(parent: Screen, gap: Float = 200) {
         this.gap = gap;
