@@ -2,7 +2,7 @@
 -lib heaps
 -lib hlsdl
 -lib Random
--hl pong.hl
+-hl bird.hl
 -main Main
 -debug
 -D windowSize=1366x768

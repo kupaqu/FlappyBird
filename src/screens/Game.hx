@@ -5,10 +5,13 @@ import entities.*;
 class Game extends Screen {
 
     var dragon: Dragon;
-    public var console: h2d.Console;
+    var obstacle: Obstacle;
+
+    var gameSpeed: Float = 150;
 
     override public function new(app: Main) {
         super(app);
+        obstacle = new Obstacle(this);
         dragon = new Dragon(this);
     }
 
@@ -16,6 +19,7 @@ class Game extends Screen {
         if (hxd.Key.isPressed(hxd.Key.SPACE)) {
             dragon.flap();
         }
+        obstacle.update(dt, gameSpeed);
         dragon.update(dt);
     }
 }
