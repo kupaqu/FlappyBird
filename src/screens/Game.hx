@@ -8,7 +8,7 @@ class Game extends Screen {
     var obstacles: Obstacles;
     var dragon: Dragon;
 
-    var gameSpeed: Float = 100;
+    var gameSpeed: Float = 200;
 
     override public function new(app: Main) {
         super(app);
