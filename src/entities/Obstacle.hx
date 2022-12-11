@@ -10,7 +10,7 @@ class Obstacle {
     public function new(parent: Screen, gap: Float = 200) {
         this.gap = gap;
 
-        upperPipe = new h2d.Bitmap(hxd.Res.loader.load('pipe-green.png').toTile(), parent);
+        upperPipe = new h2d.Bitmap(hxd.Res.loader.load('pipe.png').toTile(), parent);
 
         var scaleCoef = hxd.Window.getInstance().height / upperPipe.tile.height;
         upperPipe.tile.scaleToSize(upperPipe.tile.width*scaleCoef, upperPipe.tile.height*scaleCoef);
