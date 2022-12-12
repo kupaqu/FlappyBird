@@ -50,13 +50,21 @@ class Game extends Screen {
             || dragon.y >= hxd.Window.getInstance().height)) {
             hxd.Res.sounds.hit.play(false, 0.2);
             hxd.Res.sounds.die.play(false, 0.2);
-            /* показать счет и кнопку */
             mode = 2;
         }
         
         if (mode == 2) {
             dragon.pause = true;
             dragon.update(dt);
+            if (dragon.y > hxd.Window.getInstance().height*2) mode = 3;
+        }
+
+        if (mode == 3) {
+            var button = new Button(this, hxd.Res.loader.load('replay.png').toTile());
+            button.buttonInteractive.onClick = function(event: hxd.Event) {
+                setScreen(new Menu(app));
+            }
+            mode = 4;
         }
         
     }

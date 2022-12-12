@@ -29,7 +29,7 @@ class Dragon extends h2d.Anim {
 
     public function flap() {
         hxd.Res.sounds.wing.play(false, 0.2);
-        v = v0;
+        if (y > 0) v = v0;
     }
 
     private function setDxToCenter() {
@@ -51,6 +51,5 @@ class Dragon extends h2d.Anim {
         if (ratio > 1) ratio = 1;
         else if (ratio < -1) ratio = -1;
         rotation = ((-ratio+1)/2)*(bottomAngle-upperAngle)+upperAngle;
-
     }
 }
