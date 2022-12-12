@@ -7,6 +7,7 @@ class Game extends Screen {
     var background: Background;
     var obstacles: Obstacles;
     var dragon: Dragon;
+    var score: Score;
 
     var gameSpeed: Float = 200;
 
@@ -15,6 +16,7 @@ class Game extends Screen {
         background = new Background(this);
         obstacles = new Obstacles(this);
         dragon = new Dragon(this);
+        score = new Score(this);
     }
 
     override public function update(dt: Float) {
@@ -22,7 +24,7 @@ class Game extends Screen {
         if (hxd.Key.isPressed(hxd.Key.SPACE)) {
             dragon.flap();
         }
-        obstacles.update(dt, gameSpeed);
         dragon.update(dt);
+        obstacles.update(dt, gameSpeed, dragon, score);
     }
 }

@@ -6,6 +6,7 @@ class Obstacle {
     var gap: Float;
     public var upperPipe: h2d.Bitmap;
     public var bottomPipe: h2d.Bitmap;
+    var passed: Bool = false;
 
     public function new(parent: Screen, gap: Float = 200) {
         this.gap = gap;
@@ -28,9 +29,14 @@ class Obstacle {
         upperPipe.y = newY;
         bottomPipe.x = newX;
         bottomPipe.y = newY+gap;
+        passed = false;
     }
 
-    public function update(dt: Float, v: Float) {
+    public function update(dt: Float, v: Float, dragon: Dragon, score: Score) {
+        if (!passed && dragon.x <= upperPipe.x + upperPipe.tile.width/2) {
+            passed = true;
+            score.increment();
+        }
         upperPipe.x -= v*dt;
         bottomPipe.x = upperPipe.x;
         if (upperPipe.x < -upperPipe.tile.width) reset();

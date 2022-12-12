@@ -28,7 +28,7 @@ class Dragon extends h2d.Anim {
     }
 
     public function flap() {
-        hxd.Res.sounds.wing.play(false, 0.5);
+        hxd.Res.sounds.wing.play(false, 0.2);
         v = v0;
     }
 

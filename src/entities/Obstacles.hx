@@ -16,9 +16,9 @@ class Obstacles {
             arr[i].bottomPipe.x = arr[i].upperPipe.x;
         }
     }
-    public function update(dt, v) {
+    public function update(dt: Float, v: Float, dragon: Dragon, score: Score) {
         for (obstacle in arr) {
-            obstacle.update(dt, v);
+            obstacle.update(dt, v, dragon, score);
         }
     }
 }
