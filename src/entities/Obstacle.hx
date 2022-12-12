@@ -33,7 +33,7 @@ class Obstacle {
     }
 
     public function update(dt: Float, v: Float, dragon: Dragon, score: Score) {
-        if (!passed && dragon.x <= upperPipe.x + upperPipe.tile.width/2) {
+        if (!passed && dragon.x >= upperPipe.x + upperPipe.tile.width/2) {
             passed = true;
             score.increment();
         }
