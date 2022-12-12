@@ -16,9 +16,14 @@ class Obstacles {
             arr[i].bottomPipe.x = arr[i].upperPipe.x;
         }
     }
+
     public function update(dt: Float, v: Float, dragon: Dragon, score: Score) {
-        for (obstacle in arr) {
-            obstacle.update(dt, v, dragon, score);
-        }
+        for (obstacle in arr) obstacle.update(dt, v, dragon, score);
+    }
+    
+    public function intersects(bounds: h2d.col.Bounds) {
+        var intersection = false;
+        for (obstacle in arr) intersection = intersection || obstacle.intersects(bounds);
+        return intersection;
     }
 }

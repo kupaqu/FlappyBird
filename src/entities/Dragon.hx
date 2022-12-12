@@ -51,5 +51,6 @@ class Dragon extends h2d.Anim {
         if (ratio > 1) ratio = 1;
         else if (ratio < -1) ratio = -1;
         rotation = ((-ratio+1)/2)*(bottomAngle-upperAngle)+upperAngle;
+
     }
 }

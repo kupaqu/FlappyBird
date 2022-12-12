@@ -7,10 +7,11 @@ class Score {
     var text: h2d.Text;
 
     public function new(parent: Screen) {
-        text = new h2d.Text(hxd.res.DefaultFont.get(), parent);
+        text = new h2d.Text(hxd.Res.digits.toFont(), parent);
         text.textAlign = Center;
-        text.setScale(4);
+        text.setScale(1.5);
         text.x = hxd.Window.getInstance().width/2;
+        text.y = hxd.Window.getInstance().height/8;
         text.text = '$score';
     }
 

@@ -41,4 +41,8 @@ class Obstacle {
         bottomPipe.x = upperPipe.x;
         if (upperPipe.x < -upperPipe.tile.width) reset();
     }
+
+    public function intersects(bounds: h2d.col.Bounds) {
+        return upperPipe.getBounds().intersects(bounds) || bottomPipe.getBounds().intersects(bounds);
+    }
 }

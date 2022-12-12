@@ -7,7 +7,7 @@ class Main extends hxd.App {
     override function init() {
         @:privateAccess haxe.MainLoop.add(() -> {});
         hxd.Res.initEmbed();
-        screen = new Game(this);
+        screen = new Menu(this);
         setScene(screen);
     }
 
