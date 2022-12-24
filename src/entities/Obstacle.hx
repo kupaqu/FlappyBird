@@ -8,7 +8,7 @@ class Obstacle {
     public var bottomPipe: h2d.Bitmap;
     var passed: Bool = false;
 
-    public function new(parent: Screen, gap: Float = 200) {
+    public function new(parent: Screen, gap: Float = 300) {
         this.gap = gap;
 
         upperPipe = new h2d.Bitmap(hxd.Res.loader.load('pipe.png').toTile(), parent);

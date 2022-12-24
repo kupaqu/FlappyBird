@@ -6,9 +6,9 @@ class Obstacles {
     var n: Int;
     var dist: Float;
     var arr: Array<Obstacle>;
-    public function new(parent: Screen, gap: Float = 200, n: Int = 3) {
+    public function new(parent: Screen, gap: Float = 300, n: Int = 3) {
         arr = new Array<Obstacle>();
-        for (i in 0...n) arr[i] = new Obstacle(parent);
+        for (i in 0...n) arr[i] = new Obstacle(parent, gap);
         dist = (hxd.Window.getInstance().width + arr[0].upperPipe.tile.width)/n;
 
         for (i in 0...arr.length) {

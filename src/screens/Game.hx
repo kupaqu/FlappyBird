@@ -32,14 +32,14 @@ class Game extends Screen {
     }
 
     override public function update(dt: Float) {
-        if (mode == 0 && hxd.Key.isPressed(hxd.Key.MOUSE_LEFT)) {
+        if (mode == 0 && (hxd.Key.isPressed(hxd.Key.MOUSE_LEFT) || hxd.Key.isPressed(hxd.Key.SPACE))) {
             dragon.flap();
             tap.alpha = 0;
             mode = 1;
         }
 
         if (mode == 1) {
-            if (hxd.Key.isPressed(hxd.Key.MOUSE_LEFT)) dragon.flap();
+            if (hxd.Key.isPressed(hxd.Key.MOUSE_LEFT) || hxd.Key.isPressed(hxd.Key.SPACE)) dragon.flap();
             dragon.update(dt);
             obstacles.update(dt, gameSpeed, dragon, score);
         }

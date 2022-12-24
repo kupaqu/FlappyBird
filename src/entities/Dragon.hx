@@ -11,6 +11,8 @@ class Dragon extends h2d.Anim {
     var upperAngle = -Math.PI/6;
     var bottomAngle = Math.PI/4;
 
+    var g: h2d.Graphics;
+
     public function new(parent: Screen, v0: Float = -400, a: Float = 1000) {
         this.tiles = new Array<h2d.Tile>();
         for (i in 1...5) {
@@ -51,5 +53,11 @@ class Dragon extends h2d.Anim {
         if (ratio > 1) ratio = 1;
         else if (ratio < -1) ratio = -1;
         rotation = ((-ratio+1)/2)*(bottomAngle-upperAngle)+upperAngle;
+    }
+
+    override function getBounds(?relativeTo: Null<h2d.Object>, ?out: Null<h2d.col.Bounds>): h2d.col.Bounds {
+        var min = new h2d.col.Point(x - 20, y - 40);
+        var max = new h2d.col.Point(x + 40, y + 20);
+        return h2d.col.Bounds.fromPoints(min, max);
     }
 }
